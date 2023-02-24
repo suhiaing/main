@@ -125,7 +125,6 @@ int passChecking(char arr[50]){
 
 
 void Register(){
-    for(int i=0;i<SIZE;i++){
         int emailright=0;
          while(emailright<1){
             printf("Please enter your emailAddress.You can use letters, numbers & periods.\nEnter emailAddress for:%d:",i);
@@ -133,5 +132,4 @@ void Register(){
             emailright = emailChecking(info[i].emailAddress);
 
         }
-    }
 }
