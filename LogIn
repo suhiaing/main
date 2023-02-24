@@ -331,7 +331,6 @@ void login(){
 
 void Register(){
     indeX =globalIndex;
-    do{
         info[indeX].id = indeX;
         //age generator
         info[indeX].age = rand()%65;
@@ -368,7 +367,6 @@ void Register(){
             scanf("%s",&info[indeX].passWord);
             passRight = passChecking(info[indeX].passWord);
         }
-    }while(indeX < 0);
     recordingAllDataToFile();
 }
 
