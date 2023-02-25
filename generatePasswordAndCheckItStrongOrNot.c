@@ -1,9 +1,13 @@
 //original project
+
 #include <stdio.h>
+
 #include <stdlib.h>
 
 struct data{
+      
       char password[50];
+      
 };
 
 struct data db[5];
