@@ -18,8 +18,6 @@ int charCounting(char toCount[50]);
 
 int once = -1;
 
-int anthIndex =0;
-
 void getRandomPassWord();
 
 int main() {
