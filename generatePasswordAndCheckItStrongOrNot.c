@@ -1,13 +1,11 @@
 //original project
-
 #include <stdio.h>
 
 #include <stdlib.h>
 
 struct data{
-      
+    
       char password[50];
-      
 };
 
 struct data db[5];
@@ -75,9 +73,9 @@ int charCounting(char toCount[50]){
     return charCount;
 }
 
-void myStrongPassword(char pass[50]){
+void myStrongPassword(char arr[50]){
 
-    int i=0;
+    int lastIndex=0;
     
     int special=0;
     
@@ -87,44 +85,58 @@ void myStrongPassword(char pass[50]){
     
     int smallChar=0;
     
-    int pass_counter = charCounting(pass);
+    int pass_counter = charCounting(arr);
     
     while (strongPass == -1){
     
-        if( i == pass_counter){
+        if( lastIndex == pass_counter){
         
             strongPass=-1;
             
             break;
         }
-        if( pass[i] >= 33 && pass[i] <= 42){
-
-            special++;
+        
+         if(arr[lastIndex] > 32 && arr[lastIndex] < 48 ){
+             
+                special++;
+                
+        }else if(arr[lastIndex] > 90 && arr[lastIndex] < 97 ){
             
-        } else  if( pass[i] >= 48 && pass[i] <= 57){
-
-            numberChar++;
-
-        } else if( pass[i] >= 65 && pass[i] <= 90){
-
-            capChar++;
+                special++;
             
-        } else if( pass[i] >= 97 && pass[i] <= 122) {
-
-            smallChar++;
+        }else if(arr[lastIndex] > 122 && arr[lastIndex] < 127){
+                
+                special++;
+        
+        }else if(arr[lastIndex] > 57 && arr[lastIndex] < 65 ){
+                
+                special++;
+            
+        }else if(arr[lastIndex] > 47 && arr[lastIndex] < 58){
+                
+                numberChar++;
+            
+        }else if(arr[lastIndex] > 64 && arr[lastIndex] < 91){
+                
+                capChar++;
+            
+        }else if(arr[lastIndex] > 96 && arr[lastIndex] < 123){
+                
+                smallChar++;
+                
         }
-        
-        i++;
-        
+            
+        lastIndex++;
+
         if( special > 0 && numberChar >0 && capChar > 0 && smallChar >0){
         
             strongPass = 1;
             
         }
-        
     }
-    
 }
+    
+
 void getRandomPassWord(){
 
     if(once > -1){
@@ -161,5 +173,3 @@ void getRandomPassWord(){
     }
 
 }
-
-
