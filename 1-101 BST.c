@@ -66,21 +66,29 @@ void finder(struct Node* node , int toFindKey){
 }
 
 
-
 int main(){
 
     struct Node* root = NULL;
+    
+    int data[101] = {};
+    for(int i = 1; i< 102; i++){
+        data[i] = i;
+        printf("data in array in %d:%d\n",i,data[i]);
+    }
 
-    root = insertNode(1,101);
-    // root = insertNode(root , 8);
-    // root = insertNode(root , 12);
-    // root = insertNode(root , 5);
-    // root = insertNode(root , 15);
-    // root = insertNode(root , 3);
-    // root = insertNode(root , 4);
-    // root = insertNode(root , 13);
-    // root = insertNode(root , 1);
-    // root = insertNode(root , 20);
+
+
+
+    root = insertNode(data[0],data[101]);
+    // // root = insertNode(root , 8);
+    // // root = insertNode(root , 12);
+    // // root = insertNode(root , 5);
+    // // root = insertNode(root , 15);
+    // // root = insertNode(root , 3);
+    // // root = insertNode(root , 4);
+    // // root = insertNode(root , 13);
+    // // root = insertNode(root , 1);
+    // // root = insertNode(root , 20);
     inorderTraversal(root);
     // finder(root, 13);
 
